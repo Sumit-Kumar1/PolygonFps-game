@@ -20843,9 +20843,9 @@ MonoBehaviour:
   maxSwayAmount: 0.06
   swaySmoothValue: 10
   fireRate: 11.5
-  autoReload: 0
+  autoReload: 1
   autoReloadDelay: 0.25
-  ammo: 31
+  ammo: 30
   bulletForce: 400
   showBulletInMagDelay: 0.6
   bulletInMagRenderer: {fileID: 3625965404342794164}
@@ -20860,8 +20860,8 @@ MonoBehaviour:
   maxSparkEmission: 7
   muzzleflashLight: {fileID: 3619245816708901832}
   lightDuration: 0.02
-  mainAudioSource: {fileID: 3645925978894486962}
-  shootAudioSource: {fileID: 3645943050730439036}
+  mainAudioSource: {fileID: 3645943050730439036}
+  shootAudioSource: {fileID: 3645925978894486962}
   timescaleText: {fileID: 3616070796208054080}
   currentWeaponText: {fileID: 3615987931870155264}
   currentAmmoText: {fileID: 3615810189222938776}
@@ -21806,7 +21806,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 425d06488e4cf5d4b92a88cdc9ff35b2, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -23955,13 +23955,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Weapon Name
+  m_Text: Glock
 --- !u!114 &7796783244647907026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25706,7 +25706,7 @@ GameObject:
   - component: {fileID: 7976557944215859876}
   - component: {fileID: 7796778672492802464}
   m_Layer: 5
-  m_Name: CurrentWeaponText
+  m_Name: WeaponName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26901,8 +26901,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 726.8, y: 147}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 701.34, y: 143.68}
+  m_SizeDelta: {x: 109.07593, y: 36.642258}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &7978884798788849584
 RectTransform:

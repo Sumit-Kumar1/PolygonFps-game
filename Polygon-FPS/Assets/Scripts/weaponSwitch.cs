@@ -5,8 +5,9 @@ public class weaponSwitch : MonoBehaviour
 {
     [Tooltip("This will give you which weapon object is currently showing")]
     public int selectedWeapon = 0;
-    public GameObject transform1;
-    public GameObject transform2;
+    public GameObject gun1_transform;
+    public GameObject gun2_transform;
+   
 
         
     void Start()
@@ -23,13 +24,13 @@ public class weaponSwitch : MonoBehaviour
             if (selectedWeapon >= transform.childCount - 1)
             {
                 selectedWeapon = 0;
-                transform1.transform.position = transform2.transform.position;
+                gun1_transform.transform.position = gun2_transform.transform.position;
             }
 
             else
             {
                 selectedWeapon++;
-                transform2.transform.position = transform1.transform.position; 
+                gun2_transform.transform.position = gun1_transform.transform.position; 
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
@@ -37,12 +38,12 @@ public class weaponSwitch : MonoBehaviour
             if (selectedWeapon <= 0)
             {
                 selectedWeapon = transform.childCount - 1;
-                transform2.transform.position = transform1.transform.position;
+                gun2_transform.transform.position = gun1_transform.transform.position;
             }
             else
             {
                 selectedWeapon--;
-                transform1.transform.position = transform2.transform.position;
+                gun1_transform.transform.position = gun2_transform.transform.position;
             }
         }
         //this will give you the wepons on pressing the buttons 1 and 2.

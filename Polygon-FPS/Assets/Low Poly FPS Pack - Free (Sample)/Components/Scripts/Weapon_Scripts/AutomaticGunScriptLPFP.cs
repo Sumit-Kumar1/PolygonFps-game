@@ -181,7 +181,10 @@ public class AutomaticGunScriptLPFP : MonoBehaviour {
 		initialSwayPosition = transform.localPosition;
 
 		//Set the shoot sound to audio source
+		mainAudioSource.clip = SoundClips.takeOutSound;
+		mainAudioSource.Play();
 		shootAudioSource.clip = SoundClips.shootSound;
+		
 	}
 
 	private void LateUpdate () {
