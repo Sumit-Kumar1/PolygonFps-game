@@ -231,8 +231,7 @@ public class AutomaticGunScriptLPFP : MonoBehaviour {
 		else 
 		{
 			//When right click is released
-			gunCamera.fieldOfView = Mathf.Lerp(gunCamera.fieldOfView,
-				defaultFov,fovSpeed * Time.deltaTime);
+			gunCamera.fieldOfView = Mathf.Lerp(gunCamera.fieldOfView,defaultFov,fovSpeed * Time.deltaTime);
 
 			isAiming = false;
 			//Stop aiming
