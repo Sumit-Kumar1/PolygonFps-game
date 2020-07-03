@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Collections.Specialized;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class weaponSwitch : MonoBehaviour
@@ -8,7 +9,6 @@ public class weaponSwitch : MonoBehaviour
     public GameObject gun1_transform;
     public GameObject gun2_transform;
     
-
     void Start()
     {
         SelectWeapon();
@@ -23,15 +23,13 @@ public class weaponSwitch : MonoBehaviour
             if (selectedWeapon >= transform.childCount - 1)
             {
                 selectedWeapon = 0;
-                gun1_transform.transform.position = gun2_transform.transform.position;
-                
+                gun1_transform.transform.position = gun2_transform.transform.position;   
             }
 
             else
             {
                 selectedWeapon++;
-                gun2_transform.transform.position = gun1_transform.transform.position;
-                
+                gun2_transform.transform.position = gun1_transform.transform.position;   
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
