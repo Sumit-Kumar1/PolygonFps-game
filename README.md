@@ -3,9 +3,11 @@ I am developing a Polygon Fps game...
 
 Game details
 -------------------------------------------
-This game is developed in unity 2019 version. 
-I am learning and developing my game at the same time.
-I have done simple scene setting and player movements and interactiabiltiy in the environment.
+1.This game is developed in unity 2019 version. 
+2.I am learning and developing my game at the same time.
+3.Learned and applied unity camera effects and some particle system stuff.
+4.Added Post processing profile system to environment for beeter graphics.
+5.I have done simple scene setting and player movements and interactiabiltiy in the environment.
 Here i have used unity free assests from unity asset store
 
 What I really Need
