@@ -23,13 +23,13 @@ public class weaponSwitch : MonoBehaviour
             if (selectedWeapon >= transform.childCount - 1)
             {
                 selectedWeapon = 0;
-                gun1_transform.transform.position = gun2_transform.transform.position;   
+                gun1_transform.transform.position = gun2_transform.transform.position; 
             }
 
             else
             {
                 selectedWeapon++;
-                gun2_transform.transform.position = gun1_transform.transform.position;   
+                gun2_transform.transform.position = gun1_transform.transform.position; 
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
