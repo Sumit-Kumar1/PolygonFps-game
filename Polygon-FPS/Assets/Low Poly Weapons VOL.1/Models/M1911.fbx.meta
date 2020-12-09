@@ -1,39 +1,101 @@
 fileFormatVersion: 2
 guid: b812e42521a5a27499e76cc5ed56e3ac
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: CINEMA_4D_Editor
-    100002: Hammer
-    100004: //RootNode
-    100006: M1911
-    100008: Magazin
-    100010: Slide
-    100012: Trigger
-    400000: CINEMA_4D_Editor
-    400002: Hammer
-    400004: //RootNode
-    400006: M1911
-    400008: Magazin
-    400010: Slide
-    400012: Trigger
-    2000000: CINEMA_4D_Editor
-    2100000: Mat
-    2300000: Hammer
-    2300002: M1911
-    2300004: Magazin
-    2300006: Slide
-    2300008: Trigger
-    3300000: Hammer
-    3300002: M1911
-    3300004: Magazin
-    3300006: Slide
-    3300008: Trigger
-    4300000: M1911
-    4300002: Hammer
-    4300004: Trigger
-    4300006: Magazin
-    4300008: Slide
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: CINEMA_4D_Editor
+  - first:
+      1: 100002
+    second: Hammer
+  - first:
+      1: 100004
+    second: //RootNode
+  - first:
+      1: 100006
+    second: M1911
+  - first:
+      1: 100008
+    second: Magazin
+  - first:
+      1: 100010
+    second: Slide
+  - first:
+      1: 100012
+    second: Trigger
+  - first:
+      4: 400000
+    second: CINEMA_4D_Editor
+  - first:
+      4: 400002
+    second: Hammer
+  - first:
+      4: 400004
+    second: //RootNode
+  - first:
+      4: 400006
+    second: M1911
+  - first:
+      4: 400008
+    second: Magazin
+  - first:
+      4: 400010
+    second: Slide
+  - first:
+      4: 400012
+    second: Trigger
+  - first:
+      20: 2000000
+    second: CINEMA_4D_Editor
+  - first:
+      21: 2100000
+    second: Mat
+  - first:
+      23: 2300000
+    second: Hammer
+  - first:
+      23: 2300002
+    second: M1911
+  - first:
+      23: 2300004
+    second: Magazin
+  - first:
+      23: 2300006
+    second: Slide
+  - first:
+      23: 2300008
+    second: Trigger
+  - first:
+      33: 3300000
+    second: Hammer
+  - first:
+      33: 3300002
+    second: M1911
+  - first:
+      33: 3300004
+    second: Magazin
+  - first:
+      33: 3300006
+    second: Slide
+  - first:
+      33: 3300008
+    second: Trigger
+  - first:
+      43: 4300000
+    second: M1911
+  - first:
+      43: 4300002
+    second: Hammer
+  - first:
+      43: 4300004
+    second: Trigger
+  - first:
+      43: 4300006
+    second: Magazin
+  - first:
+      43: 4300008
+    second: Slide
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -41,7 +103,7 @@ ModelImporter:
       name: Mat
     second: {fileID: 2100000, guid: 28f0b13c7e9707746b5e0b3336181560, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -58,7 +120,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importConstraints: 1
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -73,34 +135,45 @@ ModelImporter:
     globalScale: 0.09364169
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
-  copyAvatar: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -110,14 +183,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.09364169
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
