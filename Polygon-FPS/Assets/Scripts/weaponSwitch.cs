@@ -1,6 +1,4 @@
-﻿using System.Collections.Specialized;
-using System.Xml.Serialization;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class weaponSwitch : MonoBehaviour
 {
@@ -8,8 +6,6 @@ public class weaponSwitch : MonoBehaviour
     public int selectedWeapon = 0;
     public GameObject gun1_transform;
     public GameObject gun2_transform;
-    public Camera cam1;
-    public Camera cam2;
     void Start()
     {
         SelectWeapon();
@@ -25,14 +21,12 @@ public class weaponSwitch : MonoBehaviour
             {
                 selectedWeapon = 0;
                 gun1_transform.transform.position = gun2_transform.transform.position; 
-                cam1.transform.rotation = cam2.transform.rotation;
             }
 
             else
             {
                 selectedWeapon++;
-                gun2_transform.transform.position = gun1_transform.transform.position; 
-                cam2.transform.rotation = cam1.transform.rotation;
+                gun2_transform.transform.position = gun1_transform.transform.position;
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
@@ -41,14 +35,12 @@ public class weaponSwitch : MonoBehaviour
             {
                 selectedWeapon = transform.childCount - 1;
                 gun2_transform.transform.position = gun1_transform.transform.position;
-                cam2.transform.rotation = cam1.transform.rotation;
                
             }
             else
             {
                 selectedWeapon--;
                 gun1_transform.transform.position = gun2_transform.transform.position;
-                cam1.transform.rotation = cam2.transform.rotation;
                 
             }
         }
