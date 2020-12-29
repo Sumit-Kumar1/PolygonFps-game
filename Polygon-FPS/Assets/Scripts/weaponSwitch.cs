@@ -6,14 +6,10 @@ public class weaponSwitch : MonoBehaviour
     private int selectedWeapon = 0;
     public Transform gun1_transform;
     public Transform gun2_transform;
-    Quaternion target = Quaternion.identity;
-    private bool flag = false;
     void Start()
     {
         SelectWeapon();
     }
-
-    
     void Update()
     {
         int previousSelectedWeapon = selectedWeapon;
@@ -22,23 +18,14 @@ public class weaponSwitch : MonoBehaviour
             if (selectedWeapon >= transform.childCount - 1)
             {
                 selectedWeapon = 0;
-                if(!flag)
-                {
-                    target = gun1_transform.rotation;
-                    flag = true;
-                }
-                else
-                {
-                    gun1_transform.rotation = target;
-                    target = gun1_transform.rotation;
-                }   
+                swap(gun1_transform, gun2_transform);
+                swapPosition(gun1_transform, gun2_transform);
             }
             else
-            {   
-                target = gun1_transform.rotation;
+            {
                 selectedWeapon++;
-                gun2_transform.rotation = target;
-                target = gun2_transform.rotation;
+                swap(gun2_transform, gun1_transform);
+                swapPosition(gun2_transform, gun1_transform);
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
@@ -46,30 +33,32 @@ public class weaponSwitch : MonoBehaviour
             if (selectedWeapon <= 0)
             {
                 selectedWeapon = transform.childCount - 1;
-
+                swap(gun1_transform, gun2_transform);
+                swapPosition(gun1_transform, gun2_transform);
             }
             else
             {
                 selectedWeapon--;
+                swap(gun2_transform, gun1_transform);
+                swapPosition(gun2_transform, gun1_transform);
             }
-        }
-        //this will give you the weapons on pressing the buttons 1 and 2.
-        if(Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            selectedWeapon = 0;
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha6) && transform.childCount >= 2)
-        {
-            selectedWeapon = 1;
-        }
-        
+        } 
         if(previousSelectedWeapon!=selectedWeapon)
         {
             SelectWeapon();
         }
-
     }
-
+    void swapPosition(Transform a, Transform b)
+    {
+       b.position = a.position;
+    }
+    void swap(Transform a, Transform b)
+    {
+        Quaternion target = Quaternion.identity;
+        target = b.rotation;
+        b.rotation = a.rotation;
+        a.rotation = target;
+    }
     void SelectWeapon()
     {
         int i = 0;
