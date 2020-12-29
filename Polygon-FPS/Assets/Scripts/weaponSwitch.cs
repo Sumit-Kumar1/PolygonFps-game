@@ -3,9 +3,11 @@
 public class weaponSwitch : MonoBehaviour
 {
     [Tooltip("This will give you which weapon object is currently showing")]
-    public int selectedWeapon = 0;
-    public GameObject gun1_transform;
-    public GameObject gun2_transform;
+    private int selectedWeapon = 0;
+    public Transform gun1_transform;
+    public Transform gun2_transform;
+    Quaternion target = Quaternion.identity;
+    private bool flag = false;
     void Start()
     {
         SelectWeapon();
@@ -20,13 +22,23 @@ public class weaponSwitch : MonoBehaviour
             if (selectedWeapon >= transform.childCount - 1)
             {
                 selectedWeapon = 0;
-                gun1_transform.transform.position = gun2_transform.transform.position; 
+                if(!flag)
+                {
+                    target = gun1_transform.rotation;
+                    flag = true;
+                }
+                else
+                {
+                    gun1_transform.rotation = target;
+                    target = gun1_transform.rotation;
+                }   
             }
-
             else
-            {
+            {   
+                target = gun1_transform.rotation;
                 selectedWeapon++;
-                gun2_transform.transform.position = gun1_transform.transform.position;
+                gun2_transform.rotation = target;
+                target = gun2_transform.rotation;
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
@@ -34,17 +46,14 @@ public class weaponSwitch : MonoBehaviour
             if (selectedWeapon <= 0)
             {
                 selectedWeapon = transform.childCount - 1;
-                gun2_transform.transform.position = gun1_transform.transform.position;
-               
+
             }
             else
             {
                 selectedWeapon--;
-                gun1_transform.transform.position = gun2_transform.transform.position;
-                
             }
         }
-        //this will give you the wepons on pressing the buttons 1 and 2.
+        //this will give you the weapons on pressing the buttons 1 and 2.
         if(Input.GetKeyDown(KeyCode.Alpha5))
         {
             selectedWeapon = 0;
@@ -53,7 +62,7 @@ public class weaponSwitch : MonoBehaviour
         {
             selectedWeapon = 1;
         }
-        //upto here.
+        
         if(previousSelectedWeapon!=selectedWeapon)
         {
             SelectWeapon();
