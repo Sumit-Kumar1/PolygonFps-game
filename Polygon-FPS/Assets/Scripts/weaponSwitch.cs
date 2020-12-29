@@ -6,6 +6,8 @@ public class weaponSwitch : MonoBehaviour
     private int selectedWeapon = 0;
     public Transform gun1_transform;
     public Transform gun2_transform;
+    public GameObject gun1;
+    public GameObject gun2;
     void Start()
     {
         SelectWeapon();
@@ -19,13 +21,13 @@ public class weaponSwitch : MonoBehaviour
             {
                 selectedWeapon = 0;
                 swap(gun1_transform, gun2_transform);
-                swapPosition(gun1_transform, gun2_transform);
+                gun1.transform.position = gun2.transform.position;
             }
             else
             {
                 selectedWeapon++;
                 swap(gun2_transform, gun1_transform);
-                swapPosition(gun2_transform, gun1_transform);
+                gun2.transform.position = gun1.transform.position;
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
@@ -34,13 +36,13 @@ public class weaponSwitch : MonoBehaviour
             {
                 selectedWeapon = transform.childCount - 1;
                 swap(gun1_transform, gun2_transform);
-                swapPosition(gun1_transform, gun2_transform);
+                gun2.transform.position = gun1.transform.position;
             }
             else
             {
                 selectedWeapon--;
                 swap(gun2_transform, gun1_transform);
-                swapPosition(gun2_transform, gun1_transform);
+                gun1.transform.position = gun2.transform.position;
             }
         } 
         if(previousSelectedWeapon!=selectedWeapon)
@@ -48,10 +50,7 @@ public class weaponSwitch : MonoBehaviour
             SelectWeapon();
         }
     }
-    void swapPosition(Transform a, Transform b)
-    {
-       b.position = a.position;
-    }
+    
     void swap(Transform a, Transform b)
     {
         Quaternion target = Quaternion.identity;
