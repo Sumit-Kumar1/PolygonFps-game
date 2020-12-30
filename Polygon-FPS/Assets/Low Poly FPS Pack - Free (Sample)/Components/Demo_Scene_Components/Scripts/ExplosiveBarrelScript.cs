@@ -91,4 +91,3 @@ public class ExplosiveBarrelScript : MonoBehaviour {
 		Destroy (gameObject);
 	}
 }
-// ----- Low Poly FPS Pack Free Version -----
