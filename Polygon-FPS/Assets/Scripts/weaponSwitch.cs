@@ -50,7 +50,6 @@ public class weaponSwitch : MonoBehaviour
             SelectWeapon();
         }
     }
-    
     void swap(Transform a, Transform b)
     {
         Quaternion target = Quaternion.identity;
