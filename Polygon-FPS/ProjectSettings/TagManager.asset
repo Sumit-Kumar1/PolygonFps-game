@@ -7,6 +7,7 @@ TagManager:
   - Target
   - Metal
   - ExplosiveBarrel
+  - collectible
   layers:
   - Default
   - TransparentFX
