@@ -1,10 +1,18 @@
+using System.Net;
 using UnityEngine;
 
 public class collectible : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Collider colliderObj;
+    private void Awake() {
+        colliderObj = this.GetComponent<Collider>();
+    }
     private void OnCollisionEnter(Collision other)
     {
-        Destroy(this.gameObject);
+        //TODO: make it detect collision from player, when collids it increase the required asset value and destroy itself
+        if(other.gameObject.tag == "Player")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
