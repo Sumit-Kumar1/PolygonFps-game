@@ -15,7 +15,7 @@ public class collectible : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        //TODO: make it detect collision from player, when collids it increase the required asset value and destroy itself
+        //TODO: make it detect collision from player, when collids it preform its task , create the tasks
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Name is " + prefabName);
