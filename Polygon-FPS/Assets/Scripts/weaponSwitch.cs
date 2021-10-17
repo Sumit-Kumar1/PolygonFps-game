@@ -1,13 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class weaponSwitch : MonoBehaviour
 {
     [Tooltip("This will give you which weapon object is currently showing")]
     private int selectedWeapon = 0;
-    public Transform gun1_transform;
-    public Transform gun2_transform;
-    public GameObject gun1;
-    public GameObject gun2;
+    [SerializeField] Transform gun1_transform;
+    [SerializeField] Transform gun2_transform;
+    [SerializeField] GameObject gun1;
+    [SerializeField] private GameObject gun2;
+    
     void Start()
     {
         SelectWeapon();
@@ -19,6 +20,7 @@ public class weaponSwitch : MonoBehaviour
         {
             if (selectedWeapon >= transform.childCount - 1)
             {
+                //select weapon 2 and replace its transform with gun 2
                 selectedWeapon = 0;
                 swap(gun1_transform, gun2_transform);
                 gun1.transform.position = gun2.transform.position;
@@ -57,6 +59,7 @@ public class weaponSwitch : MonoBehaviour
         b.rotation = a.rotation;
         a.rotation = target;
     }
+
     void SelectWeapon()
     {
         int i = 0;
