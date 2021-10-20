@@ -15,4 +15,4 @@ What I really Need
 	- require "animation master"
 	- I need help to make it better.
 	- if you are a asset developer. Pls help me out to develop some assets and animation.
-Drop me a mail at kumarsumitjat298@gmail.com <a mailto:kumarsumitjat298@gmail.com></a>
+Drop me a mail at kumarsumitjat298@gmail.com
