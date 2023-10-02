@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyS : MonoBehaviour
 {
+    [SerializeField] private GameObject spawnPoint;
     void Start()
     {
         
