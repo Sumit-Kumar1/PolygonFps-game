@@ -211,7 +211,6 @@ public class HandgunScriptLPFP : MonoBehaviour
 		//Toggle camera FOV when right click is held down
 		if (Input.GetButton("Fire2") && !isReloading && !isRunning && !isInspecting)
 		{
-
 			gunCamera.fieldOfView = Mathf.Lerp(gunCamera.fieldOfView,
 				aimFov, fovSpeed * Time.deltaTime);
 
@@ -307,7 +306,7 @@ public class HandgunScriptLPFP : MonoBehaviour
 		}
 
 		//If out of ammo
-		if (currentAmmo == 0 && ammo > 0)
+		if (currentAmmo == 0)
 		{
 			//Show out of ammo text
 			currentWeaponText.text = "OUT OF AMMO";
@@ -477,7 +476,7 @@ public class HandgunScriptLPFP : MonoBehaviour
 		}
 
 		//Running when pressing down W and Left Shift key
-		if ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift)))
+		if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
 		{
 			isRunning = true;
 		}
@@ -580,6 +579,9 @@ public class HandgunScriptLPFP : MonoBehaviour
 	//Reload
 	private void Reload()
 	{
+		if (ammo == 0)// don't reload if nothing to reload
+			return;
+
 		if (outOfAmmo == true)
 		{
 			//Play diff anim if out of ammo
