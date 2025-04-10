@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class testCamFollow : MonoBehaviour
 {
@@ -10,7 +8,7 @@ public class testCamFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = (Camera)FindObjectOfType<Camera>();
+        cam = FindFirstObjectByType<Camera>();
         player = GameObject.Find("Player");
     }
 
